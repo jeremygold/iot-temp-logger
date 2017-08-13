@@ -8,7 +8,7 @@
 #include "auth.h"
 
 // Set up onewire bus to 18B20 temp sensor
-#define ONE_WIRE_BUS D1
+#define ONE_WIRE_BUS D4
 OneWire oneWire(ONE_WIRE_BUS);
 DallasTemperature sensors(&oneWire);
 
@@ -44,8 +44,9 @@ void loop(void)
 
   float temperature = sensors.getTempCByIndex(0);
   Serial.print("Temperature is: ");
-  Serial.print(temperature);
+  Serial.println(temperature);
 
+  Serial.println("Writing to database");
   String payload = "temp,sensor=BlueRoom value=";
   payload.concat(temperature);
 
@@ -54,10 +55,11 @@ void loop(void)
 
   //curl -i -XPOST 'http://localhost:8086/write?db=statsdemo' --data-binary 'cpu,host=serverA value=`cat /proc/loadavg | cut -f1 -d" "`'
   HTTPClient http;
-  http.begin("http://192.168.1.139:8086/write?db=esp_post_test");
+  http.begin("http://192.168.1.116:8086/write?db=temperature");
   http.addHeader("Content-Type", "application/x-www-form-urlencoded");
   http.POST(payload);
   http.end();
+  Serial.println("Database write complete");
 
   delay(1000);
 }
