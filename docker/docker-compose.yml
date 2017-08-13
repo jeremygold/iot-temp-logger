@@ -1,0 +1,10 @@
+version: '2'
+services:
+    grafana:
+        image: "grafana/grafana"
+        ports:
+            - "3000:3000"
+    influx:
+        image: "influxdb"
+        ports:
+            - "8085:8086"
