@@ -1,10 +1,17 @@
 version: '2'
+
 services:
-    grafana:
-        image: "grafana/grafana"
-        ports:
-            - "3000:3000"
-    influx:
-        image: "influxdb"
-        ports:
-            - "8085:8086"
+    influxdb:
+        image: influxdb:latest
+    ports:
+        - "8086:8086"
+    volumes:
+        - ./influxdb-persistent:/var/lib/influxdb
+        - ./influxdb.conf:/etc/influxdb/influxdb.conf
+
+grafana:
+    image: grafana/grafana:latest
+    ports:
+        - "3000:3000"
+    volumes:
+        - ./grafana-persistent:/var/lib/grafana
