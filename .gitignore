@@ -4,3 +4,4 @@
 .gcc-flags.json
 src/auth.h
 lib/
+*.swp
