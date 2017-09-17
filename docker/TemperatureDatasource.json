@@ -1,0 +1,19 @@
+{
+    "access": "direct",
+    "basicAuth": false,
+    "basicAuthPassword": "",
+    "basicAuthUser": "",
+    "database": "temperature",
+    "id": null,
+    "isDefault": false,
+    "jsonData": {},
+    "name": "temperature",
+    "orgId": 1,
+    "password": "",
+    "secureJsonFields": {},
+    "type": "influxdb",
+    "typeLogoUrl": "",
+    "url": "http://192.168.1.116:8086",
+    "user": "",
+    "withCredentials": false
+}
