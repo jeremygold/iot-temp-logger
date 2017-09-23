@@ -1,0 +1,22 @@
+{
+  "name": "iot-temp-logger",
+  "version": "1.0.0",
+  "description": "Easy to deploy Temperature monitor based on influxDB and Grafana running in docker containers",
+  "main": "setup-temp-monitor.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jeremygold/iot-temp-logger.git"
+  },
+  "author": "Jeremy Gold",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jeremygold/iot-temp-logger/issues"
+  },
+  "homepage": "https://github.com/jeremygold/iot-temp-logger#readme",
+  "dependencies": {
+    "request": "^2.82.0"
+  }
+}
