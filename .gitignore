@@ -6,3 +6,5 @@ src/auth.h
 lib/
 *.swp
 docker/node_modules
+docker/config.json
+

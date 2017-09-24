@@ -1,7 +1,7 @@
 #!/bin/bash
 
 curl -X POST \
-    -H "Authorization: Bearer eyJrIjoicGRHaWY2dXJpTlVnUVd4ZXpLUlhrcFAwSEtMN3BxSUciLCJuIjoiY2xpLWtleSIsImlkIjoxfQ==" \
+    -H "Authorization: Bearer eyJrIjoieG1xejJRRFpYVHdQQWg5cHZKVUxFbWVmMzlNbWtDMm4iLCJuIjoiY29uZmlnLWtleSIsImlkIjoxfQ==" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
     -d "@Temperature.json" \

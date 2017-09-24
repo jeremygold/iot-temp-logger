@@ -286,5 +286,6 @@
         "updated": "2017-09-17T09:18:32Z",
         "updatedBy": "admin",
         "version": 1
-    }
+    },
+    "overwrite": true
 }
