@@ -10,7 +10,7 @@ Note: This project has been developed and tested on Ubuntu 16.04
 
 * Install docker-ce: https://docs.docker.com/install/linux/docker-ce/ubuntu/#install-docker-ce-1
 * Install docker-compose: https://docs.docker.com/compose/install/#install-compose
-* Install nodejs://nodejs.org/en/download/package-manager/
+* Install nodejs: http://nodejs.org/en/download/package-manager/
 * Install Visual Studio Code: https://code.visualstudio.com/docs/setup/linux
 * In Visual Studio Code, install the PlatformIO IDE extension
 * Set up ESP8266 udev rules: Download https://raw.githubusercontent.com/platformio/platformio/develop/scripts/99-platformio-udev.rules, and save to /etc/udev/rules.d/
@@ -42,7 +42,7 @@ Make sure that influxdb and grafana start up correctly
 ```
 $ cd docker
 $ npm install
-$ node setup-temp-logger.js
+$ node setup-temp-monitor.js
 ```
 
 ## Recompile and deploy the ESP8266 code for your configuration
