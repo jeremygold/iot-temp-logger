@@ -4,6 +4,17 @@
 
 This system is designed to provide a rapid setup temperature logging system based on ESP8266 modeules with an DS18B20 temperature sensor connected.
 
+## Prerequisites
+
+Note: This project has been developed and tested on Ubuntu 16.04
+
+* Install docker-ce: https://docs.docker.com/install/linux/docker-ce/ubuntu/#install-docker-ce-1
+* Install docker-compose: https://docs.docker.com/compose/install/#install-compose
+* Install nodejs://nodejs.org/en/download/package-manager/
+* Install Visual Studio Code: https://code.visualstudio.com/docs/setup/linux
+* In Visual Studio Code, install the PlatformIO IDE extension
+* Set up ESP8266 udev rules: Download https://raw.githubusercontent.com/platformio/platformio/develop/scripts/99-platformio-udev.rules, and save to /etc/udev/rules.d/
+
 ## Start up the servers
 
 Clone the repo, and perform the following steps to start up the servers ([tmux](https://github.com/tmux/tmux/wiki) is recommended - You'll need a couple of different terminals):
@@ -30,13 +41,13 @@ Make sure that influxdb and grafana start up correctly
 
 ```
 $ cd docker
+$ npm install
 $ node setup-temp-logger.js
 ```
 
 ## Recompile and deploy the ESP8266 code for your configuration
 
-* Install the [Atom IDE](https://atom.io/) and the [PlatformIO plugin](http://docs.platformio.org/en/latest/ide/atom.html#installation).
-* Add the iot-temp-logger repo to Atom as a Project Folder
+* Open the iot-temp-logger Folder in VSCode
 * Copy the file auth_template.h to auth.h, and fill out the details for the host machine IP address (in the INFLUXDB_IP definition), and your WiFi login credentials
 * Build and upload the file to your ESP8266
 * Use the serial monitor to validate that you have connected to WiFi successfully, and temperature readings are being transmitted regularly
