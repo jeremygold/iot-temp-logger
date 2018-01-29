@@ -55,7 +55,11 @@ void loop(void)
 
   //curl -i -XPOST 'http://localhost:8086/write?db=statsdemo' --data-binary 'cpu,host=serverA value=`cat /proc/loadavg | cut -f1 -d" "`'
   HTTPClient http;
-  http.begin("http://192.168.1.116:8086/write?db=temperature");
+
+  String url = "http://";
+  url += INFLUX_IP;
+  url += ":8086/write?db=temperature";
+  http.begin(url.c_str());
   http.addHeader("Content-Type", "application/x-www-form-urlencoded");
   http.POST(payload);
   http.end();

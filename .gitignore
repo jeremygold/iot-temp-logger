@@ -4,3 +4,9 @@
 .gcc-flags.json
 src/auth.h
 lib/
+*.swp
+docker/node_modules
+docker/config.json
+
+.vscode/c_cpp_properties.json
+.vscode/launch.json

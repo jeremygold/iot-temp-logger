@@ -1,0 +1,4 @@
+{
+    "auth_key": "Copy Key here from Grafana API Keys",
+    "host_ip": "The IP Address of the machine running influxDB"
+}
