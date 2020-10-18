@@ -14,4 +14,6 @@ services:
         ports:
             - "3000:3000"
         volumes:
-            - ./grafana-persistent:/var/lib/grafana
+            - grafana-data:/var/lib/grafana
+volumes:
+    grafana-data:

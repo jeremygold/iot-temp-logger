@@ -1,3 +1,6 @@
+.pio
+.vscode/.browse*
+.vscode/extensions.json
 .pioenvs
 .piolibdeps
 .clang_complete

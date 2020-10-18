@@ -1,11 +1,12 @@
 #!/usr/bin/env node
 
-// TODO: Update so this is all synchronous - Promise chains, or asynch / await?
+// TODO: Update so this is all synchronous - Promise chains, or async / await?
+// TODO: Try this out with clean grafana / influx installation - Think the ./sh scripts are obsolete.
 
 var request = require('request');
 
 const config = require('./config.json');
-const temperature_datasource = require('./TemperatureDatasource.json');
+const temperature_data_source = require('./TemperatureDataSource.json');
 const temperature_dashboard = require('./Temperature.json');
 
 const grafana_headers = {
@@ -28,35 +29,35 @@ function post_result_handler(error, response, body) {
 
 function create_temperature_database() {
     console.log('Creating temperature database');
-    request.post({ 
-        url: 'http://localhost:8086/query', 
-        formData: { q:'CREATE DATABASE temperature' } 
+    request.post({
+        url: 'http://localhost:8086/query',
+        formData: { q: 'CREATE DATABASE temperature' }
     },
-    post_result_handler);
+        post_result_handler);
 }
 
-function create_grafana_datasource() {
-    console.log('Creating Grafana datasource');
+function create_grafana_data_source() {
+    console.log('Creating Grafana data source');
     request.post({
-        url: 'http://localhost:3000/api/datasources', 
+        url: 'http://localhost:3000/api/datasources',
         headers: grafana_headers,
-        json: temperature_datasource
+        json: temperature_data_source
     },
-    post_result_handler);
+        post_result_handler);
 }
 
 function create_grafana_dashboard() {
     console.log('Creating Grafana dashboard');
 
     request.post({
-        url: 'http://localhost:3000/api/dashboards/db', 
+        url: 'http://localhost:3000/api/dashboards/db',
         headers: grafana_headers,
         json: temperature_dashboard
     },
-    post_result_handler);
+        post_result_handler);
 }
 
 create_temperature_database();
-create_grafana_datasource();
+create_grafana_data_source();
 create_grafana_dashboard();
 
