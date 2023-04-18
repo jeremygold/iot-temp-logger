@@ -17,6 +17,6 @@
   },
   "homepage": "https://github.com/jeremygold/iot-temp-logger#readme",
   "dependencies": {
-    "request": "^2.82.0"
+    "request": "^2.88.2"
   }
 }
